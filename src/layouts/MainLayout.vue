@@ -15,7 +15,13 @@
           Quasar App
         </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
+         <router-link to="/authentication">
+      <q-btn
+      outline
+      color="secondary"
+      size="m"
+      label="Login"/>
+    </router-link>
       </q-toolbar>
     </q-header>
 

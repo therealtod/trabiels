@@ -1,9 +1,12 @@
 <template>
   <q-page class="flex flex-center">
-    <img
-      alt="Quasar logo"
-      src="~assets/quasar-logo-full.svg"
-    >
+    <router-link to="/gameroom">
+      <q-btn
+      rounded
+      color="primary"
+      size="xl"
+      label="enter game"/>
+    </router-link>
   </q-page>
 </template>
 
