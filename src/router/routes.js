@@ -7,6 +7,7 @@ const routes = [
       { path: '', component: () => import('pages/Index.vue') },
       { path: 'gameroom', component: () => import('pages/GameRoom.vue') },
       { path: 'authentication', component: () => import('pages/Authentication.vue') },
+      { path: 'authentication2', component: () => import('pages/Authentication2.vue') },
     ],
   },
 ];
