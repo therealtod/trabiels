@@ -6,8 +6,27 @@ const routes = [
     children: [
       { path: '', component: () => import('pages/Index.vue') },
       { path: 'gameroom', component: () => import('pages/GameRoom.vue') },
-      { path: 'authentication', component: () => import('pages/Authentication.vue') },
-      { path: 'authentication2', component: () => import('pages/Authentication2.vue') },
+    ],
+  },
+  {
+    path: '/auth',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      {
+        path: 'forgotPassword',
+        name: 'ForgotPassword',
+        component: () => import('pages/ForgotPassword.vue'),
+      },
+      {
+        path: 'login',
+        name: 'Login',
+        component: () => import('pages/Authentication.vue'),
+      },
+      {
+        path: 'register',
+        name: 'Register',
+        component: () => import('pages/Authentication.vue'),
+      },
     ],
   },
 ];

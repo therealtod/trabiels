@@ -11,38 +11,31 @@
           @click="leftDrawerOpen = !leftDrawerOpen"
         />
 
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
+        <q-toolbar-title>Quasar App</q-toolbar-title>
 
-         <router-link to="/authentication">
-      <q-btn
-      outline
-      color="secondary"
-      size="m"
-      label="Login"/>
-    </router-link>
+        <router-link to="/auth/login">
+          <q-btn
+            v-if="!isAuthenticated"
+            outline
+            color="secondary"
+            size="m"
+            label="Login"/>
+        </router-link>
+        <q-btn
+          v-if="isAuthenticated"
+          outline
+          color="secondary"
+          size="m"
+          label="Logout"
+          @click="logoutUser"
+          />
       </q-toolbar>
     </q-header>
 
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-      content-class="bg-grey-1"
-    >
+    <q-drawer v-model="leftDrawerOpen" show-if-above bordered content-class="bg-grey-1">
       <q-list>
-        <q-item-label
-          header
-          class="text-grey-8"
-        >
-          Essential Links
-        </q-item-label>
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
+        <q-item-label header class="text-grey-8">Essential Links</q-item-label>
+        <EssentialLink v-for="link in essentialLinks" :key="link.title" v-bind="link" />
       </q-list>
     </q-drawer>
 
@@ -54,12 +47,19 @@
 
 <script>
 import EssentialLink from 'components/EssentialLink';
+import { mapState, mapActions } from 'vuex';
 
 export default {
   name: 'MainLayout',
 
   components: {
     EssentialLink,
+  },
+
+  computed: { ...mapState('auth', ['isAuthenticated']) },
+
+  methods: {
+    ...mapActions('auth', ['logoutUser']),
   },
 
   data() {
