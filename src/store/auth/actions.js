@@ -9,26 +9,26 @@ export const addUserToUsersCollection = async (state, userRef) => {
   return userRef.set(user);
 };
 
-export const createNewUser = async function ({ dispatch, commit }, data) {
+export async function createNewUser({ dispatch, commit }, data) {
   const { $fb } = this;
   const { email, password } = data;
   const fbAuthResponse = await $fb.createUserWithEmail(email, password);
   const id = fbAuthResponse.user.uid;
   const userRef = $fb.userRef('users', id);
   return addUserToUsersCollection({ email }, userRef);
-};
+}
 
-export const loginUser = async function ({ commit }, payload) {
+export async function loginUser({ commit }, payload) {
   const { $fb } = this;
   const { email, password } = payload;
   return $fb.loginWithEmail(email, password);
-};
+}
 
-export const logoutUser = async function ({ commit }, payload) {
+export async function logoutUser({ commit }, payload) {
   await firestoreAction(({ unbindFirestoreRef }) => { unbindFirestoreRef('users'); });
   commit('user/setCurrentUserData', null, { root: true });
   this.$fb.logoutUser();
-};
+}
 
 export function routeUserToAuth() {
   this.$router.push({
