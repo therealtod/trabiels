@@ -2,3 +2,47 @@
 a {
   text-decoration: none;
 }
+
+.content{
+  position: absolute;
+   width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'rightContent leftContent'
+}
+ 
+.leftContent{
+  grid-area: rightContent;
+  width: 100%;
+  height: 100%;
+  border: 2px solid red;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+   'box1Left'
+   'box2Left'
+   'box3Left'
+}
+ 
+.box1Left {
+  border: 1px solid yellowgreen;
+  grid-area: box1Left;
+  display: flex;
+  flex-wrap: wrap;
+}
+.box2Left {
+  border: violet;
+  grid-area: box2Left;
+}
+.box3Left {
+  border: 1px solid tomato;
+  grid-area: box3Left;
+}
+ 
+.rightContent{
+    grid-area: leftContent;
+    width: 100%;
+    height: 100%;
+    border: 2px solid blue;
+}

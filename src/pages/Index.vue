@@ -7,6 +7,13 @@
       size="xl"
       label="enter game"/>
     </router-link>
+    <router-link to="/creategame">
+      <q-btn
+      rounded
+      color="primary"
+      size="xl"
+      label="Create Game"/>
+    </router-link>
   </q-page>
 </template>
 
