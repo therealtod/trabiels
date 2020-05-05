@@ -1,9 +1,7 @@
 <template>
+<router-link :to="link">
   <q-item
     clickable
-    tag="a"
-    target="_blank"
-    :href="link"
   >
     <q-item-section
       v-if="icon"
@@ -19,11 +17,12 @@
       </q-item-label>
     </q-item-section>
   </q-item>
+</router-link>
 </template>
 
 <script>
 export default {
-  name: 'EssentialLink',
+  name: 'NavigationLink',
   props: {
     title: {
       type: String,

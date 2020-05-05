@@ -2,9 +2,17 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import { Notify } from 'quasar';
 
+
 /**
- * Firebase's auth interface method
- * https: //firebase.google.com/docs/reference/js/firebase.auth.html#callable
+ * Returns Firebase 's global namespace from which all Firebase services are accessed
+ * https://firebase.google.com/docs/reference/js/firebase.auth.html#callable
+ * @return {Object} Firebase Module
+ */
+export const self = () => firebase;
+
+/**
+ * Returns Firebase 's auth service
+ * https://firebase.google.com/docs/reference/js/firebase.auth.html#callable
  * @return {Object} currentUser object from firebase
  */
 export const auth = () => firebase.auth();
@@ -20,8 +28,7 @@ export const ensureAuthIsInitialized = async (store) => {
   return new Promise((resolve, reject) => {
     // Use a promise to make sure that the router will eventually show the
     // route after the auth is initialized.
-    // eslint-disable-next-line no-unused-vars
-    const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
+    const unsubscribe = firebase.auth().onAuthStateChanged(() => {
       resolve();
       unsubscribe();
     }, () => {
@@ -57,9 +64,15 @@ export const handleOnAuthStateChanged = async (store, currentUser) => {
   store.commit('auth/setAuthState', {
     isAuthenticated: currentUser !== null,
     isReady: true,
+    uid: (currentUser ? currentUser.uid : ''),
   });
 
-  // If the user loses authentication route
+  // Get & bind the current user
+  if (store.state.auth.isAuthenticated) {
+    await store.dispatch('user/getCurrentUser', currentUser.uid);
+  }
+
+  // If the user looses authentication route
   // them to the login page
   if (!currentUser && initialAuthState) {
     store.dispatch('auth/routeUserToAuth');
@@ -73,9 +86,6 @@ export const handleOnAuthStateChanged = async (store, currentUser) => {
 export const routerBeforeEach = async (router, store) => {
   router.beforeEach(async (to, from, next) => {
     try {
-      // Force the app to wait until Firebase has
-      // finished its initialization, and handle the
-      // authentication state of the user properly
       await ensureAuthIsInitialized(store);
       if (to.matched.some((record) => record.meta.requiresAuth)) {
         if (isAuthenticated(store)) {
@@ -85,13 +95,13 @@ export const routerBeforeEach = async (router, store) => {
         }
       } else if ((to.path === '/auth/register' && isAuthenticated(store))
         || (to.path === '/auth/login' && isAuthenticated(store))) {
-        next('/user');
+        next('/user/profile');
       } else {
         next();
       }
     } catch (err) {
       Notify.create({
-        message: `${err}`,
+        message: `ROUTER BEFORE EACH: ${err}`,
         color: 'negative',
       });
     }

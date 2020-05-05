@@ -21,13 +21,9 @@
             size="m"
             label="Login"/>
         </router-link>
-        <q-btn
+        <UserBadge
           v-if="isAuthenticated"
-          outline
-          color="secondary"
-          size="m"
-          label="Logout"
-          @click="logoutUser"
+          :username="currentUser.email"
           />
       </q-toolbar>
     </q-header>
@@ -46,20 +42,23 @@
 </template>
 
 <script>
-import EssentialLink from 'components/EssentialLink';
-import { mapState, mapActions } from 'vuex';
+import EssentialLink from 'components/NavigationLink';
+import UserBadge from 'components/UserBadge';
+import { mapState, mapGetters } from 'vuex';
 
 export default {
   name: 'MainLayout',
 
   components: {
     EssentialLink,
+    UserBadge,
   },
 
-  computed: { ...mapState('auth', ['isAuthenticated']) },
-
-  methods: {
-    ...mapActions('auth', ['logoutUser']),
+  computed: {
+    ...mapState('auth', ['isAuthenticated', 'currentUser']),
+    ...mapGetters('user', [
+      'currentUser',
+    ]),
   },
 
   data() {
@@ -67,47 +66,30 @@ export default {
       leftDrawerOpen: false,
       essentialLinks: [
         {
-          title: 'Docs',
-          caption: 'quasar.dev',
-          icon: 'school',
-          link: 'https://quasar.dev',
+          title: 'Home',
+          caption: 'Citadels Home',
+          icon: 'home',
+          link: '/',
         },
         {
-          title: 'Github',
-          caption: 'github.com/quasarframework',
+          title: 'Rankings',
+          caption: 'Browse the leaderboards',
           icon: 'code',
-          link: 'https://github.com/quasarframework',
+          link: '/rankings',
         },
         {
-          title: 'Discord Chat Channel',
-          caption: 'chat.quasar.dev',
-          icon: 'chat',
-          link: 'https://chat.quasar.dev',
-        },
-        {
-          title: 'Forum',
-          caption: 'forum.quasar.dev',
+          title: 'Game Rooms',
+          caption: 'See the games',
           icon: 'record_voice_over',
-          link: 'https://forum.quasar.dev',
+          link: '/games',
         },
         {
-          title: 'Twitter',
-          caption: '@quasarframework',
-          icon: 'rss_feed',
-          link: 'https://twitter.quasar.dev',
+          title: 'Settings',
+          caption: 'Change your settings',
+          icon: 'settings',
+          link: '/settings',
         },
-        {
-          title: 'Facebook',
-          caption: '@QuasarFramework',
-          icon: 'public',
-          link: 'https://facebook.quasar.dev',
-        },
-        {
-          title: 'Quasar Awesome',
-          caption: 'Community Quasar projects',
-          icon: 'favorite',
-          link: 'https://awesome.quasar.dev',
-        },
+
       ],
     };
   },
