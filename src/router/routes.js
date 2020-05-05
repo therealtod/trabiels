@@ -30,6 +30,18 @@ const routes = [
       },
     ],
   },
+  {
+    path: '/user',
+
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      {
+        path: 'profile',
+        name: 'Profile',
+        component: () => import('pages/UserProfile.vue'),
+      },
+    ],
+  },
 ];
 
 // Always leave this as last one

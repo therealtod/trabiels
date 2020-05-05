@@ -14,7 +14,7 @@ export async function createNewUser({ dispatch, commit }, data) {
   const { email, password } = data;
   const fbAuthResponse = await $fb.createUserWithEmail(email, password);
   const id = fbAuthResponse.user.uid;
-  const userRef = $fb.userRef('users', id);
+  const userRef = $fb.docRef('users', id);
   return addUserToUsersCollection({ email }, userRef);
 }
 

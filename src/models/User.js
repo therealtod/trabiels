@@ -3,7 +3,6 @@ export default class User {
   /**
    * Create a user.
    * @param {String} id - Place holder for a unique Firebase id.
-   * @param {String} backgroundPhoto - A generated URL from Google Storage.
    * @param {String} email - A valid email.
    * @param {String} fullName - The user's full name.
    * @param {String} mobile - the user's mobile number.
@@ -11,13 +10,9 @@ export default class User {
   */
   id = ''
 
-  backgroundPhoto = ''
-
   email = ''
 
   fullName = ''
-
-  mobile = ''
 
   profilePhoto = ''
 
