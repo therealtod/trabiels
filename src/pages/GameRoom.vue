@@ -8,17 +8,6 @@
             MANNAGGIA LOCA POCA
           </p>
         </div>
-        <div class="col-12 row box2lx">
-          <span class="col-12">
-            <div class="tile2Bis">
-              <div class="cardWrapper">
-                <span v-for="(card) in cards" :key="card.index">
-                  <img class="cards" :src="card.cardsrc" />
-                </span>
-              </div>
-            </div>
-          </span>
-        </div>
         <div class="col-12 row box3lx">
           <span class="col-12">
             <div class="tile2Bis">
@@ -30,7 +19,7 @@
             </div>
           </span>
         </div>
-        <div class="col-12 row box4lx">
+        <div class="col-12 row box4lx player">
           <span class="col-2">
             <div class="tile2">
               <div>
@@ -49,15 +38,27 @@
                     <q-icon name="warning" size="14px" class="q-mr-xs" />12
                   </q-badge>
                 </div>
-                <div>
-                  <q-btn color="primary" icon="navigation" />
+                <div class="textCentered" id="collapseButtonBox">
+                  <q-btn color="primary" round size="xs" icon="navigation" />
                 </div>
               </div>
+              <span>
+                <div>
+                  <div class="textCentered">
+                    <span>
+                      <img
+                        id="userPlayerCard"
+                        src="https://giantbomb1.cbsistatic.com/uploads/original/2/27734/1074208-queen.jpg"
+                      />
+                    </span>
+                  </div>
+                </div>
+              </span>
             </div>
           </span>
           <span class="col-10">
             <div class="tile2">
-              <div class="cardWrapper">
+              <div class="textCentered">
                 <span v-for="(card) in cards" :key="card.index">
                   <img class="cards" :src="card.cardsrc" />
                 </span>
@@ -87,14 +88,26 @@
                       <q-icon name="warning" size="14px" class="q-mr-xs" />12
                     </q-badge>
                   </div>
-                  <div>
-                    <q-btn color="primary" round size="sm" icon="navigation" />
+                  <div class="textCentered" id="collapseButtonBox">
+                    <q-btn color="primary" round size="xs" icon="navigation" />
                   </div>
                 </div>
+                <span>
+                  <div>
+                    <div class="textCentered">
+                      <span>
+                        <img
+                          id="playerCard"
+                          src="https://giantbomb1.cbsistatic.com/uploads/original/2/27734/1074208-queen.jpg"
+                        />
+                      </span>
+                    </div>
+                  </div>
+                </span>
               </div>
             </q-item-section>
-            <q-item-section class="col-10">
-              <div class="cardWrapper">
+            <q-item-section class="col-9">
+              <div class="textCentered">
                 <span v-for="(card) in cards" :key="card.index">
                   <img class="cards" :src="card.cardsrc" />
                 </span>
