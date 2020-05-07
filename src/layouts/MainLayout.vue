@@ -11,32 +11,27 @@
           @click="leftDrawerOpen = !leftDrawerOpen"
         />
 
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
+        <q-toolbar-title>Quasar App</q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
+        <router-link to="/auth/login">
+          <q-btn
+            v-if="!isAuthenticated"
+            outline
+            color="secondary"
+            size="m"
+            label="Login"/>
+        </router-link>
+        <UserBadge
+          v-if="isAuthenticated"
+          :username="currentUserName"
+          />
       </q-toolbar>
     </q-header>
 
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-      content-class="bg-grey-1"
-    >
+    <q-drawer v-model="leftDrawerOpen" show-if-above bordered content-class="bg-grey-1">
       <q-list>
-        <q-item-label
-          header
-          class="text-grey-8"
-        >
-          Essential Links
-        </q-item-label>
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
+        <q-item-label header class="text-grey-8">Essential Links</q-item-label>
+        <EssentialLink v-for="link in essentialLinks" :key="link.title" v-bind="link" />
       </q-list>
     </q-drawer>
 
@@ -47,13 +42,23 @@
 </template>
 
 <script>
-import EssentialLink from 'components/EssentialLink';
+import EssentialLink from 'components/NavigationLink';
+import UserBadge from 'components/UserBadge';
+import { mapState, mapGetters } from 'vuex';
 
 export default {
   name: 'MainLayout',
 
   components: {
     EssentialLink,
+    UserBadge,
+  },
+
+  computed: {
+    ...mapState('auth', ['isAuthenticated', 'currentUser']),
+    ...mapGetters('user', [
+      'currentUser', 'currentUserName',
+    ]),
   },
 
   data() {
@@ -61,47 +66,30 @@ export default {
       leftDrawerOpen: false,
       essentialLinks: [
         {
-          title: 'Docs',
-          caption: 'quasar.dev',
-          icon: 'school',
-          link: 'https://quasar.dev',
+          title: 'Home',
+          caption: 'Citadels Home',
+          icon: 'home',
+          link: '/',
         },
         {
-          title: 'Github',
-          caption: 'github.com/quasarframework',
+          title: 'Rankings',
+          caption: 'Browse the leaderboards',
           icon: 'code',
-          link: 'https://github.com/quasarframework',
+          link: '/rankings',
         },
         {
-          title: 'Discord Chat Channel',
-          caption: 'chat.quasar.dev',
-          icon: 'chat',
-          link: 'https://chat.quasar.dev',
-        },
-        {
-          title: 'Forum',
-          caption: 'forum.quasar.dev',
+          title: 'Game Rooms',
+          caption: 'See the games',
           icon: 'record_voice_over',
-          link: 'https://forum.quasar.dev',
+          link: '/games',
         },
         {
-          title: 'Twitter',
-          caption: '@quasarframework',
-          icon: 'rss_feed',
-          link: 'https://twitter.quasar.dev',
+          title: 'Settings',
+          caption: 'Change your settings',
+          icon: 'settings',
+          link: '/settings',
         },
-        {
-          title: 'Facebook',
-          caption: '@QuasarFramework',
-          icon: 'public',
-          link: 'https://facebook.quasar.dev',
-        },
-        {
-          title: 'Quasar Awesome',
-          caption: 'Community Quasar projects',
-          icon: 'favorite',
-          link: 'https://awesome.quasar.dev',
-        },
+
       ],
     };
   },

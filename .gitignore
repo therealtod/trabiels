@@ -34,3 +34,6 @@ yarn-error.log*
 *.vscode
 .vscode
 .vscode/*
+
+# Secrets
+firebase.config.secrets.js
