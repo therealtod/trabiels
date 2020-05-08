@@ -1,5 +1,5 @@
 <template>
-  <q-page class="flex flex-center">
+  <q-page class="flex flex-center background">
     <div class="row content">
       <div class="col-6 row" id="leftCol">
         <div class="col-12 row box1lx">
@@ -8,7 +8,7 @@
             MANNAGGIA LOCA POCA
           </p>
         </div>
-        <div class="col-12 row box2lx">
+        <div class="col-12 row box2lx player">
           <span class="col-12">
             <div class="handContainer">
               <div class="cardWrapper">
@@ -22,7 +22,7 @@
         <div class="col-12 row box3lx player">
           <span class="col-3">
             <div class="badgeAndCharacterCardContainer">
-              <div>
+              <div class="badgeContainer">
                 <div>
                   <q-badge class="badge" align="middle" color="yellow-6" text-color="black">
                     <q-icon name="warning" size="14px" class="q-mr-xs" />3
@@ -34,7 +34,7 @@
                   </q-badge>
                 </div>
                 <div>
-                  <q-badge class="badge" color="red-6" text-color="black" id="redBadge">
+                  <q-badge class="badge" color="red-6" text-color="black">
                     <q-icon name="warning" size="14px" class="q-mr-xs" />12
                   </q-badge>
                 </div>
@@ -46,9 +46,8 @@
                 <div>
                   <div>
                     <span>
-                      <img
-                        id="userPlayerCard"
-                        src="https://giantbomb1.cbsistatic.com/uploads/original/2/27734/1074208-queen.jpg"
+                      <img class="userPlayerCard"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR-7FS7VkpVYJlOPDsAIl5ItT_SLn_W4a1lYUdoGXpa9xwnuQs6&usqp=CAU"
                       />
                     </span>
                   </div>
@@ -71,7 +70,7 @@
         <div class="col-12 row player" v-for="(column) in columns" :key="column.index">
           <span class="col-3">
             <div class="badgeAndCharacterCardContainer">
-              <div>
+              <div class="badgeContainer">
                 <div>
                   <q-badge class="badge" align="middle" color="yellow-6" text-color="black">
                     <q-icon name="warning" size="14px" class="q-mr-xs" />3
@@ -83,7 +82,7 @@
                   </q-badge>
                 </div>
                 <div>
-                  <q-badge class="badge" color="red-6" text-color="black" id="redBadge">
+                  <q-badge class="badge" color="red-6" text-color="black">
                     <q-icon name="warning" size="14px" class="q-mr-xs" />12
                   </q-badge>
                 </div>
@@ -95,9 +94,8 @@
                 <div>
                   <div>
                     <span>
-                      <img
-                        id="userPlayerCard"
-                        src="https://giantbomb1.cbsistatic.com/uploads/original/2/27734/1074208-queen.jpg"
+                      <img class="userPlayerCard"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR-7FS7VkpVYJlOPDsAIl5ItT_SLn_W4a1lYUdoGXpa9xwnuQs6&usqp=CAU"
                       />
                     </span>
                   </div>
@@ -158,70 +156,70 @@ export default {
       cards: [
         {
           cardsrc:
-            'https://giantbomb1.cbsistatic.com/uploads/original/2/27734/1074208-queen.jpg',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR-7FS7VkpVYJlOPDsAIl5ItT_SLn_W4a1lYUdoGXpa9xwnuQs6&usqp=CAU',
           cardcollapsedsrc:
             'https://www.areawrestling.net/wp-content/uploads/2018/07/cerchio-png-225566.png',
           index: 1,
         },
         {
           cardsrc:
-            'https://giantbomb1.cbsistatic.com/uploads/original/2/27734/1074208-queen.jpg',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR-7FS7VkpVYJlOPDsAIl5ItT_SLn_W4a1lYUdoGXpa9xwnuQs6&usqp=CAU',
           cardcollapsedsrc:
             'https://www.areawrestling.net/wp-content/uploads/2018/07/cerchio-png-225566.png',
           index: 2,
         },
         {
           cardsrc:
-            'https://giantbomb1.cbsistatic.com/uploads/original/2/27734/1074208-queen.jpg',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR-7FS7VkpVYJlOPDsAIl5ItT_SLn_W4a1lYUdoGXpa9xwnuQs6&usqp=CAU',
           cardcollapsedsrc:
             'https://www.areawrestling.net/wp-content/uploads/2018/07/cerchio-png-225566.png',
           index: 3,
         },
         {
           cardsrc:
-            'https://giantbomb1.cbsistatic.com/uploads/original/2/27734/1074208-queen.jpg',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR-7FS7VkpVYJlOPDsAIl5ItT_SLn_W4a1lYUdoGXpa9xwnuQs6&usqp=CAU',
           cardcollapsedsrc:
             'https://www.areawrestling.net/wp-content/uploads/2018/07/cerchio-png-225566.png',
           index: 4,
         },
-        {
-          cardsrc:
-            'https://giantbomb1.cbsistatic.com/uploads/original/2/27734/1074208-queen.jpg',
-          cardcollapsedsrc:
-            'https://www.areawrestling.net/wp-content/uploads/2018/07/cerchio-png-225566.png',
-          index: 5,
-        },
         // {
         //   cardsrc:
-        //     'https://giantbomb1.cbsistatic.com/uploads/original/2/27734/1074208-queen.jpg',
+        //     'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR-7FS7VkpVYJlOPDsAIl5ItT_SLn_W4a1lYUdoGXpa9xwnuQs6&usqp=CAU',
+        //   cardcollapsedsrc:
+        //     'https://www.areawrestling.net/wp-content/uploads/2018/07/cerchio-png-225566.png',
+        //   index: 5,
+        // },
+        // {
+        //   cardsrc:
+        //     'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR-7FS7VkpVYJlOPDsAIl5ItT_SLn_W4a1lYUdoGXpa9xwnuQs6&usqp=CAU',
         //   cardcollapsedsrc:
         //     'https://www.areawrestling.net/wp-content/uploads/2018/07/cerchio-png-225566.png',
         //   index: 6,
         // },
         // {
         //   cardsrc:
-        //     'https://giantbomb1.cbsistatic.com/uploads/original/2/27734/1074208-queen.jpg',
+        //     'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR-7FS7VkpVYJlOPDsAIl5ItT_SLn_W4a1lYUdoGXpa9xwnuQs6&usqp=CAU',
         //   cardcollapsedsrc:
         //     'https://www.areawrestling.net/wp-content/uploads/2018/07/cerchio-png-225566.png',
         //   index: 7,
         // },
         // {
         //   cardsrc:
-        //     'https://giantbomb1.cbsistatic.com/uploads/original/2/27734/1074208-queen.jpg',
+        //     'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR-7FS7VkpVYJlOPDsAIl5ItT_SLn_W4a1lYUdoGXpa9xwnuQs6&usqp=CAU',
         //   cardcollapsedsrc:
         //     'https://www.areawrestling.net/wp-content/uploads/2018/07/cerchio-png-225566.png',
         //   index: 8,
         // },
         // {
         //   cardsrc:
-        //     'https://giantbomb1.cbsistatic.com/uploads/original/2/27734/1074208-queen.jpg',
+        //     'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR-7FS7VkpVYJlOPDsAIl5ItT_SLn_W4a1lYUdoGXpa9xwnuQs6&usqp=CAU',
         //   cardcollapsedsrc:
         //     'https://www.areawrestling.net/wp-content/uploads/2018/07/cerchio-png-225566.png',
         //   index: 9,
         // },
         // {
         //   cardsrc:
-        //     'https://giantbomb1.cbsistatic.com/uploads/original/2/27734/1074208-queen.jpg',
+        //     'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR-7FS7VkpVYJlOPDsAIl5ItT_SLn_W4a1lYUdoGXpa9xwnuQs6&usqp=CAU',
         //   cardcollapsedsrc:
         //     'https://www.areawrestling.net/wp-content/uploads/2018/07/cerchio-png-225566.png',
         //   index: 10,
