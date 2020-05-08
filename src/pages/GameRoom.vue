@@ -13,7 +13,7 @@
             <div class="handContainer">
               <div class="cardWrapper">
                 <span v-for="(card) in cards" :key="card.index">
-                  <img class="cards" :src="card.cardsrc" />
+                  <img class="cardInHand" :src="card.cardsrc" />
                 </span>
               </div>
             </div>
@@ -182,13 +182,13 @@ export default {
             'https://www.areawrestling.net/wp-content/uploads/2018/07/cerchio-png-225566.png',
           index: 4,
         },
-        // {
-        //   cardsrc:
-        //     'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR-7FS7VkpVYJlOPDsAIl5ItT_SLn_W4a1lYUdoGXpa9xwnuQs6&usqp=CAU',
-        //   cardcollapsedsrc:
-        //     'https://www.areawrestling.net/wp-content/uploads/2018/07/cerchio-png-225566.png',
-        //   index: 5,
-        // },
+        {
+          cardsrc:
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR-7FS7VkpVYJlOPDsAIl5ItT_SLn_W4a1lYUdoGXpa9xwnuQs6&usqp=CAU',
+          cardcollapsedsrc:
+            'https://www.areawrestling.net/wp-content/uploads/2018/07/cerchio-png-225566.png',
+          index: 5,
+        },
         // {
         //   cardsrc:
         //     'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR-7FS7VkpVYJlOPDsAIl5ItT_SLn_W4a1lYUdoGXpa9xwnuQs6&usqp=CAU',
