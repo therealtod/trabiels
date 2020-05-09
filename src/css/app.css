@@ -187,41 +187,9 @@ span[data-descr]:hover::after {
   z-index: 1;
 }
 
-
 /*style dell HR sotto al nickname*/
-hr { 
-  background: url('http://i.stack.imgur.com/37Aip.png') no-repeat top center;
-  background-size: contain;
-  display: block;
-  height: 18px;
-  border: 0;
-  position: relative;
-  margin-block-start: 0em;
-  width: 80%;
-}
-hr:before,
-hr:after {
-  content: '';
-  display: block;
-  position: absolute;
-  background: #383535;
-  height: 2px;
-  top: 8px;
-}
-hr:before {
-  left: 0;
-  right: 50%;
-  margin-right: 10px;
-}
-hr:after {
-  right: 0;
-  left: 50%;
-  margin-left: 10px;
-}
 
-p{
-  margin: 0;
-}
+
 /* span[data-descr]:focus::after */
 
 #topSxBox{

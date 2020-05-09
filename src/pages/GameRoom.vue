@@ -1,7 +1,18 @@
 <template>
   <q-page class="flex flex-center background">
     <div class="row content">
-      <div class="col-12 boxHeader"></div>
+      <div class="col-12 row boxHeader">
+        <div class="col-4 row justify-around items-center">
+          <button class="col-auto">LERCIO</button>
+          <button class="col-auto">EJOINT</button>
+          <button class="col-auto">TOD</button>
+        </div>
+        <div class="col-8 row justify-around items-center">
+          <div class="col-auto boxPG" v-for="(charBox) in charactersBox" :key="charBox.index">
+            PG
+          </div>
+        </div>
+      </div>
       <div class="col-6 row" id="leftCol">
         <div class="col-12 row box2lx playerHand panelBackground">
           <span class="col-12">
@@ -16,6 +27,13 @@
         </div>
         <div class="col-12 row box3lx player panelBackground">
           <span class="col-12 row playerContainer">
+            <div class="col-12 tagName">
+              <q-chip class="q-chipStyle">
+                <q-avatar>
+                  <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
+                </q-avatar>John
+              </q-chip>
+            </div>
             <span class="col-3">
               <div class="badgeAndCharacterCardContainer">
                 <div class="badgeContainer">
@@ -69,8 +87,11 @@
         >
           <span class="col-12 row playerContainer">
             <div class="col-12 tagName">
-              <p>LERCIO</p>
-              <hr />
+              <q-chip>
+                <q-avatar>
+                  <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
+                </q-avatar>John
+              </q-chip>
             </div>
             <span class="col-3">
               <div class="badgeAndCharacterCardContainer">
@@ -226,6 +247,40 @@ export default {
           cardcollapsedsrc:
             'https://www.areawrestling.net/wp-content/uploads/2018/07/cerchio-png-225566.png',
           index: 10,
+        },
+      ],
+      charactersBox: [
+        {
+          charBox: 'ciao1',
+          index: 1,
+        },
+        {
+          charBox: 'ciao1',
+          index: 2,
+        },
+        {
+          charBox: 'ciao1',
+          index: 3,
+        },
+        {
+          charBox: 'ciao1',
+          index: 4,
+        },
+        {
+          charBox: 'ciao1',
+          index: 5,
+        },
+        {
+          charBox: 'ciao1',
+          index: 6,
+        },
+        {
+          charBox: 'ciao1',
+          index: 7,
+        },
+        {
+          charBox: 'ciao1',
+          index: 8,
         },
       ],
     };
