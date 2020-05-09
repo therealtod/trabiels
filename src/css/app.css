@@ -23,7 +23,7 @@ body{
 }
 
 #leftCol{
-  height: 100%;
+  max-height: 85%;
 }
 
 .scrollable {
@@ -118,7 +118,18 @@ body{
   border-image-outset: 0;
   border-image-repeat: stretch;
   padding: 1.5em 1em;
-  margin-top: 1em;
+  margin-top: 0.3em;
+}
+
+.playerHand{
+  border: 2px solid transparent;
+  border-image-source: url(../statics/images/bordo2.png);
+  border-image-slice: 35;
+  border-image-width: 1.5em;
+  border-image-outset: 0;
+  border-image-repeat: stretch;
+  padding: 0.5em 0.5em;
+  margin-top: 0.3em;
 }
 
 .innerPlayersBox{
@@ -131,6 +142,13 @@ body{
   justify-content: center;
 }
 
+.tagName{
+  text-align: center;
+  /* border-bottom: 2px solid red;
+  margin: 0 0 8px 0;
+  padding: 0 0 5px 0; */
+}
+
 .collapseButtonBox{
   margin-top: 4.5%;
   text-align: center;
@@ -139,4 +157,83 @@ body{
 .background{
   background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url(https://www.voidu.com/content/products/gallery/citadels-ms-v-002-l-24862-20171128110207.jpg);
   
+}
+
+
+/*Set del tooltip*/
+
+/*            <span
+              tabindex="0"
+              data-descr="E' un coglione, ma gli vogliamo tanto bene"
+            >EJOINT</span>---- usato come prova -----*/
+span[data-descr] {
+  position: relative;
+  cursor: help;
+}
+
+span[data-descr]:hover::after {
+  content: attr(data-descr);
+  position: absolute;
+  left: 0;
+  top: 24px;
+  min-width: 200px;
+  border: 1px #aaaaaa solid;
+  border-radius: 10px;
+  background-color: #ffffcc;
+  padding: 12px;
+  color: #000000;
+  font-size: 14px;
+  z-index: 1;
+}
+
+
+/*style dell HR sotto al nickname*/
+hr { 
+  background: url('http://i.stack.imgur.com/37Aip.png') no-repeat top center;
+  background-size: contain;
+  display: block;
+  height: 18px;
+  border: 0;
+  position: relative;
+  margin-block-start: 0em;
+  width: 80%;
+}
+hr:before,
+hr:after {
+  content: '';
+  display: block;
+  position: absolute;
+  background: #383535;
+  height: 2px;
+  top: 8px;
+}
+hr:before {
+  left: 0;
+  right: 50%;
+  margin-right: 10px;
+}
+hr:after {
+  right: 0;
+  left: 50%;
+  margin-left: 10px;
+}
+
+p{
+  margin: 0;
+}
+/* span[data-descr]:focus::after */
+
+#topSxBox{
+  margin: 0.8em 0 0 0;
+}
+
+.boxHeader{
+  min-height: 15%;
+  width: 100%;
+  border: 2px solid transparent;
+  border-image-source: url(../statics/images/bordo2.png);
+  border-image-slice: 35;
+  border-image-width: 1.5em;
+  border-image-outset: 0;
+  border-image-repeat: stretch;
 }
