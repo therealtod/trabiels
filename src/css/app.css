@@ -30,6 +30,24 @@ body{
   overflow-y: scroll;
 }
 
+* {
+  scrollbar-width: thin;
+  scrollbar-color: blue orange;
+}
+
+/* Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+*::-webkit-scrollbar-track {
+  background: orange;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: blue;
+  border-radius: 20px;
+  border: 3px solid orange;
+}
+
 .userPlayerCard{
   height: auto;  
   width: 4.5em;
