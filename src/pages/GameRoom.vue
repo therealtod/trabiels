@@ -3,13 +3,13 @@
     <div class="row content">
       <div class="col-12 row boxHeader">
         <div class="col-4 row justify-around items-center">
-          <q-btn class="col-auto" color="primary" label="Flip" @click="dialog=true">
+          <q-btn class="col-auto" color="primary" label="Azioni" @click="dialogAction=true">
             <q-tooltip transition-show="flip-right" transition-hide="flip-left">DIO CANE</q-tooltip>
           </q-btn>
-          <q-btn class="col-auto" color="primary" label="Scale Menu">
+          <q-btn class="col-auto" color="primary" label="Potere" @click="dialogPower=true">
             <q-tooltip transition-show="scale" transition-hide="scale">DIO PORCO</q-tooltip>
           </q-btn>
-          <q-btn class="col-auto" color="primary" label="Rotate">
+          <q-btn class="col-auto" color="primary" label="Mo vediamo">
             <q-tooltip transition-show="rotate" transition-hide="rotate">GESù BRUTTO</q-tooltip>
           </q-btn>
         </div>
@@ -43,7 +43,8 @@
           <playerContainer :cards="cards" :player="player"></playerContainer>
         </div>
       </div>
-      <dialog-draggable :modelDialog="dialog" :title="'Dialog Draggable'" @onHide="dialog=false">
+      <dialog-draggable :modelDialog="dialogAction" :title="'Dialog Draggable'"
+      @onHide="dialogAction=false">
         <q-card-section v-if="isFirstStep" class="flex column items-center justify-center">
           <p>Scegli se prendere due monete o due carte</p>
           <q-form @submit="onSubmitFirst" class="q-gutter-md">
@@ -72,6 +73,10 @@
             </div>
           </q-form>
         </q-card-section>
+      </dialog-draggable>
+      <dialog-draggable :modelDialog="dialogPower" :title="'Dialog Draggable'"
+      @onHide="dialogPower=false">
+        <p>Gioca il tuo Potere</p>
       </dialog-draggable>
     </div>
   </q-page>
@@ -103,7 +108,8 @@ export default {
   },
   data() {
     return {
-      dialog: false,
+      dialogAction: false,
+      dialogPower: false,
       isFirstStep: true,
       firstStepOption: 'golds',
       isSecondStep: false,
