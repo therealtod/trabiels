@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: 'dialogDraggable',
+  name: 'DialogDraggable',
   props: {
     draggable: { type: Boolean, default: true },
     modelDialog: { type: Boolean, default: false },

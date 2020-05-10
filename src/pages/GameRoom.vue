@@ -3,10 +3,10 @@
     <div class="row content">
       <div class="col-12 row boxHeader">
         <div class="col-4 row justify-around items-center">
-          <q-btn class="col-auto" color="primary" label="Azioni" @click="dialogAction=true">
+          <q-btn class="col-auto" color="primary" label="Azioni" @click="openDialogAction">
             <q-tooltip transition-show="flip-right" transition-hide="flip-left">DIO CANE</q-tooltip>
           </q-btn>
-          <q-btn class="col-auto" color="primary" label="Potere" @click="dialogPower=true">
+          <q-btn class="col-auto" color="primary" label="Potere" @click="openDialogPower">
             <q-tooltip transition-show="scale" transition-hide="scale">DIO PORCO</q-tooltip>
           </q-btn>
           <q-btn class="col-auto" color="primary" label="Mo vediamo">
@@ -43,78 +43,44 @@
           <playerContainer :cards="cards" :player="player"></playerContainer>
         </div>
       </div>
-      <dialog-draggable :modelDialog="dialogAction" :title="'Dialog Draggable'"
-      @onHide="dialogAction=false">
-        <q-card-section v-if="isFirstStep" class="flex column items-center justify-center">
-          <p>Scegli se prendere due monete o due carte</p>
-          <q-form @submit="onSubmitFirst" class="q-gutter-md">
-            <q-radio name="firstStepOption" v-model="firstStepOption" val="golds" label="MONETE" />
-            <q-radio name="firstStepOption" v-model="firstStepOption" val="cards" label="CARTE" />
-            <div>
-              <q-btn label="firstOK" type="submit" color="primary" />
-            </div>
-          </q-form>
-        </q-card-section>
-        <q-card-section v-if="isSecondStep" class="flex column items-center justify-center">
-          <p>Scegli quale carta prendere</p>
-          <q-form @submit="onSubmitSecond" class="q-gutter-md">
-            <div class="col-12 row">
-              <span v-for="(card) in cardsDaPescare" :key="card.index">
-                <q-radio
-                  name="secondStepOption"
-                  v-model="secondStepOption"
-                  :val="card.cardVal"
-                  :label="card.cardName"
-                />
-              </span>
-              <div>
-                <q-btn label="secondOK" type="submit" color="primary" />
-              </div>
-            </div>
-          </q-form>
-        </q-card-section>
-      </dialog-draggable>
-      <dialog-draggable :modelDialog="dialogPower" :title="'Dialog Draggable'"
-      @onHide="dialogPower=false">
-        <p>Gioca il tuo Potere</p>
-      </dialog-draggable>
+      <dialogAction :dialog="bDialogAction" @close="closeDialogAction"/>
+      <dialogPower :character="character" :dialog="bDialogPower" @close="closeDialogPower"/>
     </div>
   </q-page>
 </template>
 
 <script>
-import dialogDraggable from '../components/DialogDraggable';
+import dialogAction from '../components/DialogAction';
+import dialogPower from '../components/DialogPower';
 import playerContainer from '../components/PlayerContainer';
 import mockdata from '../mockdata/data';
 
 export default {
   name: 'GameRoom',
   components: {
-    dialogDraggable,
+    dialogAction,
+    dialogPower,
     playerContainer,
   },
   methods: {
-    onSubmitFirst() {
-      if (this.firstStepOption === 'cards') {
-        this.isFirstStep = false;
-        this.isSecondStep = true;
-      } else if (this.firstStepOption === 'golds') {
-        this.dialog = false;
-      }
+    openDialogAction() {
+      this.bDialogAction = true;
     },
-    onSubmitSecond() {
-      this.dialog = false;
+    closeDialogAction() {
+      this.bDialogAction = false;
+    },
+    openDialogPower() {
+      this.bDialogPower = true;
+    },
+    closeDialogPower() {
+      this.bDialogPower = false;
     },
   },
   data() {
     return {
-      dialogAction: false,
-      dialogPower: false,
-      isFirstStep: true,
-      firstStepOption: 'golds',
-      isSecondStep: false,
-      secondStepOption: 'ciao1',
-      cardsDaPescare: mockdata.data.cardsDaPescare,
+      bDialogAction: false,
+      bDialogPower: false,
+      character: 'Merchant',
       loggedPlayer: mockdata.data.loggedPlayer,
       players: mockdata.data.players,
       cards: mockdata.data.cards,
