@@ -4,14 +4,14 @@
     :title="'Dialog Draggable'"
     @onHide="onCloseDialog"
   >
-  <contentDialogPowerArchitect v-if="character === 'Architect'"/>
-  <contentDialogPowerAssassin v-else-if="character === 'Assassin'"/>
-  <contentDialogPowerBishop v-else-if="character === 'Bishop'"/>
-  <contentDialogPowerKing v-else-if="character === 'King'"/>
-  <contentDialogPowerMagician v-else-if="character === 'Magician'"/>
-  <contentDialogPowerMerchant v-else-if="character === 'Merchant'"/>
-  <contentDialogPowerThief v-else-if="character === 'Thief'"/>
-  <contentDialogPowerWarlord v-else-if="character === 'Warlord'"/>
+  <contentDialogPowerAssassin @save="onSave" v-if="character === 'assassin'"/>
+  <contentDialogPowerThief @save="onSave" v-else-if="character === 'thief'"/>
+  <contentDialogPowerMagician @save="onSave" v-else-if="character === 'magician'"/>
+  <contentDialogPowerKing @save="onSave" v-else-if="character === 'king'"/>
+  <contentDialogPowerBishop @save="onSave" v-else-if="character === 'bishop'"/>
+  <contentDialogPowerMerchant @save="onSave" v-else-if="character === 'merchant'"/>
+  <contentDialogPowerArchitect @save="onSave" v-else-if="character === 'architect'"/>
+  <contentDialogPowerWarlord v-else-if="character === 'warlord'"/>
   </dialogDraggable>
 </template>
 
@@ -63,6 +63,10 @@ export default {
     onCloseDialog() {
       this.i_dialog = false;
       this.$emit('close');
+    },
+    onSave(powerAction) {
+      this.$emit('powerAction', powerAction);
+      this.onCloseDialog();
     },
   },
 };

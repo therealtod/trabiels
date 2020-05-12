@@ -44,7 +44,8 @@
         </div>
       </div>
       <dialogAction :dialog="bDialogAction" @close="closeDialogAction"/>
-      <dialogPower :character="character" :dialog="bDialogPower" @close="closeDialogPower"/>
+      <dialogPower :character="character" :dialog="bDialogPower" @close="closeDialogPower"
+      @powerAction="getPowerAction"/>
     </div>
   </q-page>
 </template>
@@ -75,12 +76,16 @@ export default {
     closeDialogPower() {
       this.bDialogPower = false;
     },
+    getPowerAction(powerAction) {
+      console.log('GAMEROOM:');
+      console.log(powerAction);
+    },
   },
   data() {
     return {
       bDialogAction: false,
       bDialogPower: false,
-      character: 'Merchant',
+      character: 'magician',
       loggedPlayer: mockdata.data.loggedPlayer,
       players: mockdata.data.players,
       cards: mockdata.data.cards,
