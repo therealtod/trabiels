@@ -34,7 +34,7 @@
           <playerContainer :cards="cards" :player="loggedPlayer"></playerContainer>
         </div>
       </div>
-      <div class="col-6 row scrollable" id="rightCol">
+      <div class="col-6 row" id="rightCol">
         <div
           class="col-12 row player panelBackground"
           v-for="(player) in players"
@@ -85,7 +85,7 @@ export default {
     return {
       bDialogAction: false,
       bDialogPower: false,
-      character: 'magician',
+      character: 'thief',
       loggedPlayer: mockdata.data.loggedPlayer,
       players: mockdata.data.players,
       cards: mockdata.data.cards,

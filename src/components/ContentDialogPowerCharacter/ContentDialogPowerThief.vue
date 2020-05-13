@@ -1,8 +1,7 @@
 <template>
   <div class="q-pa-md">POTERE LADRO
     <q-form @submit="onSubmit" class="q-gutter-md">
-      <div class="bg-grey-2 q-pa-sm rounded-borders">
-        Preferred genre:
+      <div class="q-pa-sm rounded-borders">
         <q-option-group
           name="selected"
           v-model="preferred"
@@ -10,8 +9,8 @@
         />
       </div>
 
-      <div>
-        <q-btn label="Submit" type="submit" color="primary" />
+      <div class="column">
+        <q-btn class="self-end" label="Submit" type="submit" color="primary" />
       </div>
     </q-form>
   </div>

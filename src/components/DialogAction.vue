@@ -1,16 +1,31 @@
 <template>
   <dialogDraggable
+    classDialog="dialogAction no-shadow"
     :modelDialog="i_dialog"
-    :title="'Dialog Draggable'"
+    :title="'Gioca Azione'"
     @onHide="onCloseDialog"
   >
     <q-card-section v-if="isFirstStep" class="flex column items-center justify-center">
       <p>Scegli se prendere due monete o due carte</p>
-      <q-form @submit="onSubmitFirst" class="q-gutter-md">
-        <q-radio name="firstStepOption" v-model="firstStepOption" val="golds" label="MONETE" />
-        <q-radio name="firstStepOption" v-model="firstStepOption" val="cards" label="CARTE" />
-        <div>
-          <q-btn label="firstOK" type="submit" color="primary" />
+      <q-form @submit="onSubmitFirst" class="row q-gutter-md">
+        <div class="col-12 row justify-around">
+          <q-radio
+            class="col-5"
+            name="firstStepOption"
+            v-model="firstStepOption"
+            val="golds"
+            label="MONETE"
+          />
+          <q-radio
+            class="col-5"
+            name="firstStepOption"
+            v-model="firstStepOption"
+            val="cards"
+            label="CARTE"
+          />
+        </div>
+        <div class="col-12 column">
+          <q-btn class="q-mr-md self-end" label="firstOK" type="submit" color="primary" />
         </div>
       </q-form>
     </q-card-section>

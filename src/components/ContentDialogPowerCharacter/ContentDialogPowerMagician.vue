@@ -1,15 +1,15 @@
 <template>
   <div class="q-pa-md">POTERE MAGICIAN
     <q-form @submit="onSubmit" class="q-gutter-md" v-if="bPlayersListVisible === false">
-      <div class="bg-grey-2 q-pa-sm rounded-borders">
+      <div class="q-pa-sm rounded-borders">
         <q-option-group
           name="selected"
           v-model="preferred"
           :options="options"
         />
       </div>
-      <div>
-        <q-btn label="Submit" type="submit" color="primary" />
+      <div class="column">
+        <q-btn class="self-end" label="Submit" type="submit" color="primary" />
       </div>
     </q-form>
     <q-form @submit="onSubmitPlayer" class="q-gutter-md" v-if="bPlayersListVisible === true">

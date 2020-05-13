@@ -1,5 +1,6 @@
 <template>
   <dialogDraggable
+    classDialog="no-shadow dialogPower"
     :modelDialog="i_dialog"
     :title="'Dialog Draggable'"
     @onHide="onCloseDialog"

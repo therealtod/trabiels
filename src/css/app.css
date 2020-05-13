@@ -26,26 +26,23 @@ body{
   max-height: 85%;
 }
 
-.scrollable {
+#rightCol {
   overflow-y: scroll;
-}
-
-* {
   scrollbar-width: thin;
-  scrollbar-color: blue orange;
+  scrollbar-color: #2ce8f4 #1976d2;
 }
 
 /* Works on Chrome/Edge/Safari */
-*::-webkit-scrollbar {
+#rightCol::-webkit-scrollbar {
   width: 12px;
 }
-*::-webkit-scrollbar-track {
-  background: orange;
+#rightCol::-webkit-scrollbar-track {
+  background: #1976d2;
 }
-*::-webkit-scrollbar-thumb {
-  background-color: blue;
+#rightCol::-webkit-scrollbar-thumb {
+  background-color: #2ce8f4;
   border-radius: 20px;
-  border: 3px solid orange;
+  border: 3px solid #1976d2;
 }
 
 .userPlayerCard{
@@ -264,4 +261,40 @@ div #statGameCard{
   border-image-width: 1.5em;
   border-image-outset: 0;
   border-image-repeat: stretch;
+}
+
+.dialogAction{
+  border: 2px solid transparent;
+  border-image-source: url(../statics/images/bordo2.png);
+  border-image-slice: 35;
+  border-image-width: 1.5em;
+  border-image-outset: 0;
+  border-image-repeat: stretch;
+  padding: 0.5em 0.5em;
+  margin-top: 0.3em;
+  background: url(https://img.freepik.com/vettori-gratuito/pergamena-gialla_53876-91513.jpg?size=626&ext=jpg);
+  background-origin: content-box;
+  background-position: center;
+  background-size: 97% 97%;
+  background-repeat: no-repeat;
+}
+
+.dialogHeader{
+  background: none
+}
+
+.dialogPower{
+  border: 2px solid transparent;
+  border-image-source: url(../statics/images/bordo2.png);
+  border-image-slice: 35;
+  border-image-width: 1.5em;
+  border-image-outset: 0;
+  border-image-repeat: stretch;
+  padding: 0.5em 0.5em;
+  margin-top: 0.3em;
+  background: url(https://img.freepik.com/vettori-gratuito/pergamena-gialla_53876-91513.jpg?size=626&ext=jpg);
+  background-origin: content-box;
+  background-position: center;
+  background-size: 97% 97%;
+  background-repeat: no-repeat;
 }

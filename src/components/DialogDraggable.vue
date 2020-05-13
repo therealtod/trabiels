@@ -1,7 +1,7 @@
 <template>
   <q-dialog v-model="swDialog" persistent ref="myDialog" @show="onShow" @hide="onHide">
-    <q-card>
-      <q-bar class="bg-primary text-white" :class="draggable?'cursor-move':''">
+    <q-card :class="this.classDialog">
+      <q-bar class="q-pt-sm dialogHeader" :class="draggable?'cursor-move':''">
         <div class="text-h6">{{title}}</div>
         <q-space />
         <q-btn dense flat icon="close" v-close-popup />
@@ -15,6 +15,7 @@
 export default {
   name: 'DialogDraggable',
   props: {
+    classDialog: { type: String, default: '' },
     draggable: { type: Boolean, default: true },
     modelDialog: { type: Boolean, default: false },
     title: { type: String, default: 'Titulo' },
