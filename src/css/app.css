@@ -175,7 +175,6 @@ body{
 
 .background{
   background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url(https://www.voidu.com/content/products/gallery/citadels-ms-v-002-l-24862-20171128110207.jpg);
-  
 }
 
 
@@ -240,6 +239,14 @@ span[data-descr]:hover::after {
 
 /*CSS di Waiting Room*/
 
+.backgroundWaitingRoom{
+  height: 100%;
+  background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+  background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url(https://www.voidu.com/content/products/gallery/citadels-ms-v-002-l-24862-20171128110207.jpg);
+}
+
 div #statGameCard{
   height: 100%;
   padding-right: 2em;
@@ -247,4 +254,14 @@ div #statGameCard{
 }
 .textHeadBox{
   font-size: 1.8em;
+}
+
+.containerWaitingRoom{
+  height: 100%;
+  border: 2px solid transparent;
+  border-image-source: url(../statics/images/bordo2.png);
+  border-image-slice: 35;
+  border-image-width: 1.5em;
+  border-image-outset: 0;
+  border-image-repeat: stretch;
 }
