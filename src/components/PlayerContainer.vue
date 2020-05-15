@@ -14,13 +14,13 @@
           <div>
             <q-badge class="badge" align="middle" color="yellow-6" text-color="black">
               <q-tooltip>Le monete del tuo avversario, rubale con sagezza!</q-tooltip>
-              <q-icon name="warning" size="14px" class="q-mr-xs" />3
+              <q-icon name="fas fa-coins" size="14px" class="q-mr-xs" />3
             </q-badge>
           </div>
           <div>
             <q-badge class="badge" color="green-6" text-color="black">
               <q-tooltip>Queste sono le carte del tuo avversario, che schifo!</q-tooltip>
-              <q-icon name="warning" size="14px" class="q-mr-xs" />5
+              <q-icon name="fas fa-clone" size="14px" class="q-mr-xs" />5
             </q-badge>
           </div>
           <div>
@@ -29,7 +29,7 @@
                 I punti del tuo avversario,
                 se ne ha più di te stai perdendo, boomer!
               </q-tooltip>
-              <q-icon name="warning" size="14px" class="q-mr-xs" />12
+              <q-icon name="fas fa-gem" size="14px" class="q-mr-xs" />12
             </q-badge>
           </div>
         </div>

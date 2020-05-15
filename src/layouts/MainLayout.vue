@@ -11,7 +11,7 @@
           @click="leftDrawerOpen = !leftDrawerOpen"
         />
 
-        <q-toolbar-title>Quasar App</q-toolbar-title>
+        <q-toolbar-title class="HeaderTextFont">-Trabiels-</q-toolbar-title>
 
         <router-link to="/auth/login">
           <q-btn
