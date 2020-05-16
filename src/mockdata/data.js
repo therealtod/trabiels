@@ -108,34 +108,42 @@ export default {
     ],
     charBox: [
       {
+        charBoxsrc: '../statics/images/CLASSI/ASSASSIN.png',
         charBox: 'ciao1',
         index: 1,
       },
       {
+        charBoxsrc: '../statics/images/CLASSI/THIEF.png',
         charBox: 'ciao1',
         index: 2,
       },
       {
+        charBoxsrc: '../statics/images/CLASSI/MAGICIAN.png',
         charBox: 'ciao1',
         index: 3,
       },
       {
+        charBoxsrc: '../statics/images/CLASSI/KING.png',
         charBox: 'ciao1',
         index: 4,
       },
       {
+        charBoxsrc: '../statics/images/CLASSI/BISHOP.png',
         charBox: 'ciao1',
         index: 5,
       },
       {
+        charBoxsrc: '../statics/images/CLASSI/MERCHANT.png',
         charBox: 'ciao1',
         index: 6,
       },
       {
+        charBoxsrc: '../statics/images/CLASSI/ARCHITECT.png',
         charBox: 'ciao1',
         index: 7,
       },
       {
+        charBoxsrc: '../statics/images/CLASSI/WARLORD.png',
         charBox: 'ciao1',
         index: 8,
       },

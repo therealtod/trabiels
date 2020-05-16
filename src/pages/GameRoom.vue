@@ -9,12 +9,16 @@
           <q-btn class="col-auto" color="primary" label="Potere" @click="openDialogPower">
             <q-tooltip transition-show="scale" transition-hide="scale">DIO PORCO</q-tooltip>
           </q-btn>
-          <q-btn class="col-auto" color="primary" label="Mo vediamo">
+          <q-btn class="col-auto" color="primary" label="Passa il Turno">
             <q-tooltip transition-show="rotate" transition-hide="rotate">GESù BRUTTO</q-tooltip>
           </q-btn>
         </div>
         <div class="col-8 row justify-around items-center">
-          <div class="col-auto boxPG" v-for="(charBox) in charBox" :key="charBox.index">PG</div>
+          <div class="col-auto" v-for="(charBox) in charBox" :key="charBox.index"
+           id="boxPG">
+            <img class="boxPgDimension" :src="charBox.charBoxsrc" />
+            <img v-if="charBox.index===3" class="xRed" src="..\statics\images\x-png-35415.png" />
+          </div>
         </div>
       </div>
       <div class="col-6 row" id="leftCol">
@@ -43,9 +47,13 @@
           <playerContainer :cards="cards" :player="player"></playerContainer>
         </div>
       </div>
-      <dialogAction :dialog="bDialogAction" @close="closeDialogAction"/>
-      <dialogPower :character="character" :dialog="bDialogPower" @close="closeDialogPower"
-      @powerAction="getPowerAction"/>
+      <dialogAction :dialog="bDialogAction" @close="closeDialogAction" />
+      <dialogPower
+        :character="character"
+        :dialog="bDialogPower"
+        @close="closeDialogPower"
+        @powerAction="getPowerAction"
+      />
     </div>
   </q-page>
 </template>
