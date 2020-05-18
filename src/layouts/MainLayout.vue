@@ -55,7 +55,7 @@ export default {
   },
 
   computed: {
-    ...mapState('auth', ['isAuthenticated', 'currentUser']),
+    ...mapState('auth', ['isAuthenticated']),
     ...mapGetters('user', [
       'currentUser', 'currentUserName',
     ]),

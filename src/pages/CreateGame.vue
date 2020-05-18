@@ -4,7 +4,7 @@
       <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md" ref="newGameForm">
         <q-input
           filled
-          v-model="gameName"
+          v-model="name"
           label="Game Name *"
           hint="Game Name"
           lazy-rules
@@ -35,7 +35,7 @@
         <q-input
           filled
           type="number"
-          v-model="players"
+          v-model="roomSize"
           label="Players *"
           hint="Players"
           :rules="[
@@ -72,22 +72,22 @@ export default {
   name: 'CreateGame',
   data() {
     return {
-      gameName: null,
+      name: null,
       password: null,
       isPwd: true,
       publicGame: false,
-      players: 3,
+      roomSize: 3,
       districts: 8,
     };
   },
   methods: {
-    ...mapActions('game', ['createNewGame']),
+    ...mapActions('room', ['createNewRoom']),
     onToggle(bToggled) {
       if (bToggled === true) this.password = null;
     },
     onSubmit() {
       const {
-        gameName, password, players, districts,
+        name, password, roomSize, districts,
       } = this;
       this.$refs.newGameForm.validate()
         .then(async (success) => {
@@ -99,9 +99,10 @@ export default {
               customClass: 'loader',
             });
             try {
-              await this.createNewGame({
-                gameName, password, players, districts,
+              await this.createNewRoom({
+                name, password, roomSize, districts,
               });
+              this.$router.push({ path: '/lobby' });
             } catch (err) {
               console.error(err);
               this.$q.notify({
@@ -124,7 +125,7 @@ export default {
       this.name = null;
       this.password = null;
       this.publicGame = false;
-      this.players = 3;
+      this.roomsSize = 3;
       this.districts = 8;
     },
   },
