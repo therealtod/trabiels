@@ -1,9 +1,11 @@
 <template>
+  <q-page class="backgroundWaitingRoom">
+    <q-card class="q-ma-xl cardWaitingRoom">
       <div class="row q-py-md q-px-md">
-        <div class="col-12 row justify-around q-pa-md textHeadBox">
-          <q-card class="col-auto q-pa-sm">Waiting Room (ricordati di mettere pronto, ora!)</q-card>
-          <div class="col-4 self-center">
-            <q-btn>Incita a mettere pronto. Premi qui!</q-btn>
+        <div class="col-12 row q-pa-md">
+          <div class="text-h4 col-3 offset-md-3">Waiting Room</div>
+          <div class="col-2 offset-md-4">
+            <q-btn round class="glossy" color="deep-orange" icon="fas fa-bell" />
           </div>
         </div>
         <div class="col-8 q-pt-xs q-pr-md q-pb-md q-pl-md">
@@ -77,6 +79,8 @@
           </q-card>
         </div>
       </div>
+    </q-card>
+  </q-page>
 </template>
 
 <script>
