@@ -166,9 +166,7 @@ body{
   margin-left: 1em;
 }
 
-.cardWaitingRoom{
-  background: rgba(255,255,255,.7);
-}
+
 
 .handContainer{
   height: 100%;
@@ -334,6 +332,13 @@ span[data-descr]:hover::after {
 }
 
 /*CSS di Waiting Room*/
+#avatarCard .avatarWaitingRoom{
+  width: 53%;
+}
+
+.cardWaitingRoom{
+  background: rgba(255,255,255,.7);
+}
 
 .backgroundWaitingRoom{
   height: 100%;

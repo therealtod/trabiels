@@ -1,14 +1,14 @@
 <template>
-  <q-page class="backgroundWaitingRoom">
-    <q-card class="q-ma-xl cardWaitingRoom">
-      <div class="row q-py-md q-px-md">
+  <q-page class="backgroundWaitingRoom q-pa-md">
+    <q-card class="cardWaitingRoom">
+      <div class="row justify-around q-py-md q-px-md">
         <div class="col-12 row q-pa-md">
           <div class="text-h4 col-3 offset-md-3">Waiting Room</div>
           <div class="col-2 offset-md-4">
             <q-btn round class="glossy" color="deep-orange" icon="fas fa-bell" />
           </div>
         </div>
-        <div class="col-8 q-pt-xs q-pr-md q-pb-md q-pl-md">
+        <div class="col-6">
           <q-table
             :data="data"
             :columns="columns"
@@ -28,32 +28,17 @@
                 :style="props.selected ? 'transform: scale(0.95);' : ''"
               >
                 <q-card
-                  class="row justify-between q-py-lg"
+                  id="avatarCard"
+                  class="relative-position row column q-py-md"
                   :class="props.selected ? 'bg-light-green-12' : ''"
                   :card-style="{ backgroundColor: '#ff0000' }"
                 >
-                  <q-card-section class="col-auto">
+                  <q-card-section class="text-center col-12 q-pt-xs q-pb-sm q-pr-xs q-pl-xs">
                     <q-checkbox dense v-model="props.selected" :label="props.row.name" />
                   </q-card-section>
-                  <q-list class="col-auto self-center q-mr-md">
-                    <q-btn round>
-                      <q-avatar>
-                        <q-tooltip>Some text as content of Tooltip</q-tooltip>
-                        <img src="https://cdn.quasar.dev/img/avatar.png" />
-                      </q-avatar>
-                    </q-btn>
-                    <!-- <q-item
-                  v-for="col in props.cols.filter(col => col.name !== 'desc')"
-                  :key="col.name"
-                >
-                  <q-item-section>
-                    <q-item-label>{{ col.label }}</q-item-label>
-                  </q-item-section>
-                  <q-item-section side>
-                    <q-item-label caption>{{ col.value }}</q-item-label>
-                  </q-item-section>
-                    </q-item>-->
-                  </q-list>
+                  <q-avatar class="col self-center avatarWaitingRoom q-ml-xl">
+                    <img src="https://cdn.quasar.dev/img/avatar.png" />
+                  </q-avatar>
                 </q-card>
               </div>
             </template>
@@ -162,7 +147,7 @@ export default {
           howGay: '99%',
         },
         {
-          name: 'Gavedil',
+          name: 'Gavedilaasaasasasasssas',
           gamePlayed: 19,
           isAKing: 'No',
           howGay: '99%',

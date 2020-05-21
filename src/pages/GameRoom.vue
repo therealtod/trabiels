@@ -14,8 +14,7 @@
           </q-btn>
         </div>
         <div class="col-8 row justify-around items-center">
-          <div class="col-auto" v-for="(charBox) in charBox" :key="charBox.index"
-           id="boxPG">
+          <div class="col-auto" v-for="(charBox) in charBox" :key="charBox.index" id="boxPG">
             <img class="boxPgDimension" :src="charBox.charBoxsrc" />
             <img v-if="charBox.index===3" class="xRed" src="..\statics\images\x-png-35415.png" />
           </div>
