@@ -257,11 +257,21 @@ body{
 .background{
   background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url(https://www.voidu.com/content/products/gallery/citadels-ms-v-002-l-24862-20171128110207.jpg);
 }
-.backgroundWaitingRoom{
+.backgroundHome{
+  height: 100%;
+  background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url(https://www.voidu.com/content/products/gallery/citadels-ms-v-002-l-24862-20171128110207.jpg);
+}
+.backgroundFixed{
   position: fixed;
   background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url(https://www.voidu.com/content/products/gallery/citadels-ms-v-002-l-24862-20171128110207.jpg);
 }
 
+
+.bodyHome{
+  margin: 0 25%;
+  height: 100%;
+  width: 50%;
+}
 
 /*Set del tooltip*/
 
