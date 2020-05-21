@@ -48,7 +48,7 @@
                           round
                           flat
                           color="grey"
-                          @click="() => {joinRoom(row)}"
+                          @click="() => {joinRoom(row, getCurrentUser)}"
                           icon="loupe"
                         ></q-btn>
                       </q-td>
@@ -77,6 +77,11 @@ export default {
   },
   methods: {
     ...mapActions('room', ['joinRoom']),
+    ...mapActions('user', ['getCurrentUser']),
+    joinRoom(game, currentUser) {
+      this.$fb.performRequest('addPlayerToRoom', { player: currentUser.email, roomId: game.id });
+      this.$router.push({ path: `/games/${game.id}/room` });
+    },
   },
   data() {
     return {

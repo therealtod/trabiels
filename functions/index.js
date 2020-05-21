@@ -4,3 +4,7 @@
 // exports.helloWorld = functions.https.onRequest((request, response) => {
 //  response.send("Hello from Firebase!");
 // });
+
+const room = require ('./room');
+
+exports.addPlayerToRoom = room.addPlayerToRoom;
