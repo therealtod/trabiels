@@ -1,7 +1,7 @@
 <template>
   <span class="col-12 row playerContainer">
     <div class="col-12 tagName">
-      <q-chip dense>
+      <q-chip class="q-my-sm" outline>
         <q-tooltip>I am groot!</q-tooltip>
         <q-avatar>
           <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
