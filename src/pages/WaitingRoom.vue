@@ -4,7 +4,7 @@
       <div class="row justify-around q-py-md q-px-md">
         <div class="col-12 row q-pa-md">
           <div class="text-h4 col-3 offset-md-3">Waiting Room</div>
-          <div class="col-2 offset-md-4">
+          <div class="col-1 offset-md-3 ">
             <q-btn round class="glossy" color="deep-orange" icon="fas fa-bell" />
           </div>
         </div>
