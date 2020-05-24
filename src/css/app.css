@@ -1,4 +1,26 @@
 /* app global css */
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap%27');
+
+:root {
+  --light-french-beige: #BDA377;
+  --antique-ruby: #93032E;
+  --antique-brass: #C69F89;
+  --moss-green: #84894A;
+  --blue-green: #034C3C;
+}
+
 a {
   text-decoration: none;
+}
+
+.trabiels-background {
+  background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url(https://www.voidu.com/content/products/gallery/citadels-ms-v-002-l-24862-20171128110207.jpg);
+}
+
+.transparent-background {
+  background: rgba(176, 176, 176, 0.4);
+}
+
+.medieval-style-font {
+  font-family: 'MedievalSharp';
 }
