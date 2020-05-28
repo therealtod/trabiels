@@ -5,6 +5,7 @@ import { vuexfireMutations } from 'vuexfire';
 import auth from './auth';
 import user from './user';
 import game from './game';
+import room from './room';
 
 Vue.use(Vuex);
 
@@ -19,6 +20,7 @@ export default function (/* { ssrContext } */) {
       auth,
       user,
       game,
+      room,
     },
     mutations: {
       ...vuexfireMutations,

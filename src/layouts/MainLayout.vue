@@ -81,7 +81,7 @@ export default {
           title: 'Game Rooms',
           caption: 'See the games',
           icon: 'record_voice_over',
-          link: '/games',
+          link: '/lobby',
         },
         {
           title: 'Settings',
